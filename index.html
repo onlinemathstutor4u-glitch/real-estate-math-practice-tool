@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Prepare for the California Real Estate License Exam with our interactive math simulator. Learn key formulas, practice unlimited sample questions, and pass on your first attempt!">
+    <meta name="author" content="Real Estate Prep Pro">
+    <title>California Real Estate Exam Math Practice Simulator</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo" id="app-logo">
+                🏠 CA Real Estate <span>Math</span>
+            </div>
+            <nav class="nav-tabs" aria-label="Main Navigation">
+                <button class="tab-btn active" data-tab="practice" id="tab-btn-practice">Practice Simulator</button>
+                <button class="tab-btn" data-tab="formulas" id="tab-btn-formulas">Formula Cheat Sheet</button>
+                <button class="tab-btn" data-tab="calculator" id="tab-btn-calculator">Calculator</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main>
+
+        <!-- Category 1: Practice Simulator Tab -->
+        <section id="practice-tab" class="tab-content active">
+            <!-- Hero Title -->
+            <div class="hero">
+                <h1>California Real Estate Math Practice</h1>
+                <p>Master the 10-15% math portion of the license exam with randomized practice scenarios, immediate feedback, and detailed formulas.</p>
+            </div>
+
+            <!-- Quiz Layout Grid -->
+            <div class="dashboard-grid">
+                <!-- Main Quiz Board -->
+                <div class="glass-card" id="quiz-board">
+                    <div class="quiz-header">
+                        <span class="category-tag" id="question-category">Category</span>
+                        <span class="progress-text" id="progress-count">Completed: 0</span>
+                    </div>
+
+                    <!-- Question Container -->
+                    <div class="question-text" id="question-box">
+                        Generating practice question...
+                    </div>
+
+                    <!-- Options List -->
+                    <div class="options-container" id="options-container">
+                        <!-- Options will be generated dynamically -->
+                    </div>
+
+                    <!-- Explanation Card (Hidden by default) -->
+                    <div class="explanation-card" id="explanation-wrapper" style="display: none;">
+                        <div class="explanation-title">
+                            💡 Step-by-Step Explanation
+                        </div>
+                        <div class="explanation-text" id="explanation-text">
+                            Explanation content.
+                        </div>
+                    </div>
+
+                    <!-- Action Button Row -->
+                    <div class="actions-row" id="next-btn-container" style="display: none;">
+                        <button class="btn-primary" id="next-btn">
+                            Next Question ➜
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stats and Filters Sidebar -->
+                <div class="stats-panel">
+                    <!-- Progress Card -->
+                    <div class="glass-card" style="padding: 1.5rem;">
+                        <h3 class="filter-title">My Progress</h3>
+                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                            <!-- Stat 1: Total Answered -->
+                            <div class="stat-item">
+                                <div class="stat-icon">📝</div>
+                                <div class="stat-details">
+                                    <h4>Answered</h4>
+                                    <p id="stat-total">0</p>
+                                </div>
+                            </div>
+                            <!-- Stat 2: Correct Answered -->
+                            <div class="stat-item">
+                                <div class="stat-icon success">✓</div>
+                                <div class="stat-details">
+                                    <h4>Correct</h4>
+                                    <p id="stat-correct">0</p>
+                                </div>
+                            </div>
+                            <!-- Stat 3: Accuracy -->
+                            <div class="stat-item">
+                                <div class="stat-icon">🎯</div>
+                                <div class="stat-details">
+                                    <h4>Accuracy</h4>
+                                    <p id="stat-accuracy">0%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-primary" id="reset-stats-btn" style="width: 100%; margin-top: 1.5rem; background: rgba(255,255,255,0.05); border: 1px solid var(--bg-card-border); box-shadow: none; padding: 0.8rem;">
+                            Reset Progress
+                        </button>
+                    </div>
+
+                    <!-- Category Filters Card -->
+                    <div class="glass-card" style="padding: 1.5rem;">
+                        <h3 class="filter-title">Focus Category</h3>
+                        <div class="filter-list">
+                            <button class="filter-btn active" data-category="all" id="filter-all">All Categories</button>
+                            <button class="filter-btn" data-category="commissions" id="filter-commissions">Commissions</button>
+                            <button class="filter-btn" data-category="ltv" id="filter-ltv">LTV & Mortgage Math</button>
+                            <button class="filter-btn" data-category="caprate" id="filter-caprate">Cap Rate & Valuation</button>
+                            <button class="filter-btn" data-category="grm" id="filter-grm">GRM & Rent Multipliers</button>
+                            <button class="filter-btn" data-category="landarea" id="filter-landarea">Land Area (Acreage)</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category 2: Formula Cheat Sheet Tab -->
+        <section id="formulas-tab" class="tab-content">
+            <div class="hero">
+                <h1>Formula Cheat Sheet</h1>
+                <p>Quick reference guide for the essential calculations tested on the California Real Estate License Exam.</p>
+            </div>
+            
+            <!-- Cards Container -->
+            <div class="formulas-grid">
+                <!-- Dynamically populated from JS -->
+            </div>
+        </section>
+
+        <!-- Category 3: Calculator Tab -->
+        <section id="calculator-tab" class="tab-content">
+            <div class="hero">
+                <h1>Exam-Standard Calculator</h1>
+                <p>Practice using a standard, non-programmable calculator similar to the one provided at the testing center.</p>
+            </div>
+
+            <!-- Calculator Frame -->
+            <div class="calculator-container">
+                <div class="calculator-screen">
+                    <div class="calc-prev-operand"></div>
+                    <div class="calc-curr-operand">0</div>
+                </div>
+                <div class="calculator-grid">
+                    <button class="calc-btn action" data-action="clear">AC</button>
+                    <button class="calc-btn action" data-action="delete">DEL</button>
+                    <button class="calc-btn operator" data-op="÷">÷</button>
+                    <button class="calc-btn operator" data-op="×">×</button>
+                    
+                    <button class="calc-btn" data-num="7">7</button>
+                    <button class="calc-btn" data-num="8">8</button>
+                    <button class="calc-btn" data-num="9">9</button>
+                    <button class="calc-btn operator" data-op="-">-</button>
+                    
+                    <button class="calc-btn" data-num="4">4</button>
+                    <button class="calc-btn" data-num="5">5</button>
+                    <button class="calc-btn" data-num="6">6</button>
+                    <button class="calc-btn operator" data-op="+">+</button>
+                    
+                    <button class="calc-btn" data-num="1">1</button>
+                    <button class="calc-btn" data-num="2">2</button>
+                    <button class="calc-btn" data-num="3">3</button>
+                    <button class="calc-btn equals" data-action="equals">=</button>
+                    
+                    <button class="calc-btn" style="grid-column: span 2; aspect-ratio: auto;" data-num="0">0</button>
+                    <button class="calc-btn" data-num=".">.</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                © 2026 CA Real Estate Math Mastery Tool. All rights reserved.
+            </div>
+            <div>
+                Designed for optimal SEO &amp; mobile performance.
+            </div>
+        </div>
+    </footer>
+
+    <!-- App Script -->
+    <script src="app.js"></script>
+</body>
+</html>
