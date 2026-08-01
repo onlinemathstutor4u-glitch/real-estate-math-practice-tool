@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Interactive Quiz Simulator for the California Real Estate License Exam. Practice Mock Tests and use the built-in non-programmable calculator.">
+    <title>California Real Estate Math Practice Simulator - Interactive Exam Prep</title>
+    <link rel="stylesheet" href="../../style.css">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Semantic Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                🏠 CA Real Estate <span>Math</span>
+            </div>
+            <nav aria-label="Course Navigation">
+                <ul style="display: flex; gap: 1.5rem; list-style: none;">
+                    <li><a href="../../index.html" style="color: var(--text-secondary); text-decoration: none; font-weight: 500;">Home</a></li>
+                    <li><a href="index.html" style="color: var(--text-secondary); text-decoration: none; font-weight: 500;">Course Details</a></li>
+                    <li><a href="practice.html" class="active" style="color: var(--primary); text-decoration: none; font-weight: 600;">Practice Simulator</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- SEO Breadcrumbs -->
+        <nav aria-label="Breadcrumb" class="breadcrumbs" style="margin-bottom: 2rem; font-size: 0.9rem; color: var(--text-secondary);">
+            <a href="../../index.html" style="color: var(--primary); text-decoration: none;">Home</a> &gt; 
+            <a href="../../index.html#courses" style="color: var(--primary); text-decoration: none;">Exams</a> &gt; 
+            <a href="index.html" style="color: var(--primary); text-decoration: none;">California Real Estate Math</a> &gt; 
+            <span style="color: var(--text-primary);">Practice Simulator</span>
+        </nav>
+
+        <!-- Dashboard Layout Grid -->
+        <div class="dashboard-grid">
+            
+            <!-- Left Column: Quiz Simulator Board -->
+            <div>
+                <!-- Mock Test Selector / Tab Selector Header -->
+                <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <h3 class="filter-title">Select Mode</h3>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <button class="filter-btn active" id="mode-practice" onclick="setMode('practice')">Infinite Practice Mode</button>
+                        <button class="filter-btn" id="mode-mock" onclick="setMode('mock')">10-Question Mock Test</button>
+                    </div>
+                </div>
+
+                <!-- Main Quiz Board -->
+                <div class="glass-card" id="quiz-board">
+                    <div class="quiz-header">
+                        <span class="category-tag" id="question-category">Category</span>
+                        <span class="progress-text" id="progress-count">Completed: 0</span>
+                    </div>
+
+                    <!-- Question Container -->
+                    <div class="question-text" id="question-box">
+                        Loading questions from CSV database...
+                    </div>
+
+                    <!-- Options List -->
+                    <div class="options-container" id="options-container">
+                        <!-- Options will be generated dynamically -->
+                    </div>
+
+                    <!-- Explanation Card (Hidden by default) -->
+                    <div class="explanation-card" id="explanation-wrapper" style="display: none;">
+                        <div class="explanation-title">
+                            💡 Step-by-Step Explanation
+                        </div>
+                        <div class="explanation-text" id="explanation-text">
+                            Explanation content.
+                        </div>
+                    </div>
+
+                    <!-- Action Button Row -->
+                    <div class="actions-row" id="next-btn-container" style="display: none;">
+                        <button class="btn-primary" id="next-btn" onclick="nextQuestion()">
+                            Next Question ➜
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Stats & Calculator Widgets -->
+            <div class="stats-panel">
+                <!-- Statistics Card -->
+                <div class="glass-card" style="padding: 1.5rem;">
+                    <h3 class="filter-title">My Progress</h3>
+                    <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                        <div class="stat-item">
+                            <div class="stat-icon">📝</div>
+                            <div class="stat-details">
+                                <h4>Answered</h4>
+                                <p id="stat-total">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon success">✓</div>
+                            <div class="stat-details">
+                                <h4>Correct</h4>
+                                <p id="stat-correct">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">🎯</div>
+                            <div class="stat-details">
+                                <h4>Accuracy</h4>
+                                <p id="stat-accuracy">0%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-primary" id="reset-stats-btn" onclick="resetStats()" style="width: 100%; margin-top: 1.5rem; background: rgba(255,255,255,0.05); border: 1px solid var(--bg-card-border); box-shadow: none; padding: 0.8rem;">
+                        Reset Progress
+                    </button>
+                </div>
+
+                <!-- Exam-Standard Calculator -->
+                <div class="glass-card" style="padding: 1.5rem;">
+                    <h3 class="filter-title" style="text-align: center; margin-bottom: 1rem;">Exam Calculator</h3>
+                    <div class="calculator-container" style="margin: 0 auto; max-width: 100%; box-shadow: none; border: none; padding: 0;">
+                        <div class="calculator-screen" style="padding: 1rem; margin-bottom: 1rem;">
+                            <div class="calc-prev-operand" style="font-size: 0.8rem; min-height: 1.2rem;"></div>
+                            <div class="calc-curr-operand" style="font-size: 1.5rem; min-height: 2.2rem;">0</div>
+                        </div>
+                        <div class="calculator-grid" style="gap: 0.5rem;">
+                            <button class="calc-btn action" onclick="calcAction('clear')">AC</button>
+                            <button class="calc-btn action" onclick="calcAction('delete')">DEL</button>
+                            <button class="calc-btn operator" onclick="calcOp('÷')">÷</button>
+                            <button class="calc-btn operator" onclick="calcOp('×')">×</button>
+                            
+                            <button class="calc-btn" onclick="calcNum('7')">7</button>
+                            <button class="calc-btn" onclick="calcNum('8')">8</button>
+                            <button class="calc-btn" onclick="calcNum('9')">9</button>
+                            <button class="calc-btn operator" onclick="calcOp('-')">-</button>
+                            
+                            <button class="calc-btn" onclick="calcNum('4')">4</button>
+                            <button class="calc-btn" onclick="calcNum('5')">5</button>
+                            <button class="calc-btn" onclick="calcNum('6')">6</button>
+                            <button class="calc-btn operator" onclick="calcOp('+')">+</button>
+                            
+                            <button class="calc-btn" onclick="calcNum('1')">1</button>
+                            <button class="calc-btn" onclick="calcNum('2')">2</button>
+                            <button class="calc-btn" onclick="calcNum('3')">3</button>
+                            <button class="calc-btn equals" onclick="calcAction('equals')">=</button>
+                            
+                            <button class="calc-btn" style="grid-column: span 2; aspect-ratio: auto;" onclick="calcNum('0')">0</button>
+                            <button class="calc-btn" onclick="calcNum('.')">.</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Semantic Footer -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                © 2026 Exam Prep Portal. Built with 100% Agentic AI.
+            </div>
+            <div>
+                <a href="index.html" style="color: var(--text-secondary); text-decoration: none;">Course Details</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Universal Quiz Engine and CSV Parser Script -->
+    <script src="../../quiz-engine.js"></script>
+</body>
+</html>
