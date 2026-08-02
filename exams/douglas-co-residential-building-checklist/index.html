@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free interactive Douglas County CO residential building checklist and plan review guide. Fulfill building permit requirements, engineering and site plans.">
+    <meta name="keywords" content="Douglas County CO residential building checklist, Douglas County building permit template, Colorado residential building permit, Douglas County building codes">
+    <title>Douglas County CO Residential Building Checklist & Guide</title>
+    
+    <!-- External CSS Reference -->
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Schema.org JSON-LD Markup for Rich Snippets -->
+    <script type="application/ld-json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Get a Residential Building Permit in Douglas County CO",
+      "description": "Step-by-step checklist for compiling site plans, engineering drawings, and structural details for residential building permits in Douglas County, Colorado.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Draft the Site Plan",
+          "text": "Draw site plans showing property boundaries, setbacks, easements, driveways, utility hookups, and topography contours.",
+          "url": "https://onlinemathstutor4u-glitch.github.io/real-estate-math-practice-tool/exams/douglas-co-residential-building-checklist/#step-1"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Compile Structural Engineering Plans",
+          "text": "Acquire sealed structural engineering designs conforming to Colorado snow loads, soil reports, and wind loads.",
+          "url": "https://onlinemathstutor4u-glitch.github.io/real-estate-math-practice-tool/exams/douglas-co-residential-building-checklist/#step-2"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Establish Erosion and Stormwater Controls",
+          "text": "Submit a Stormwater Pollution Prevention Plan (SWP3) or sediment control map to prevent runoff.",
+          "url": "https://onlinemathstutor4u-glitch.github.io/real-estate-math-practice-tool/exams/douglas-co-residential-building-checklist/#step-3"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Submit Electronically to Douglas County Portal",
+          "text": "Upload plans in PDF format to the county's digital permitting system (Citizen Portal) for plan review.",
+          "url": "https://onlinemathstutor4u-glitch.github.io/real-estate-math-practice-tool/exams/douglas-co-residential-building-checklist/#step-4"
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld-json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Douglas County CO Residential Contractor Compliance Bundle",
+      "description": "Includes professional CAD site plan templates, erosion control details, soil report checklists, and inspector communication templates.",
+      "image": "https://images.unsplash.com/photo-1503387762-592dedb8c310",
+      "offers": {
+        "@type": "Offer",
+        "price": "29.99",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+    </script>
+
+    <style>
+        .split-layout {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 900px) {
+            .split-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+        .content-area h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: white;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--bg-card-border);
+            padding-bottom: 0.5rem;
+        }
+        .content-area p {
+            color: var(--text-secondary);
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+        }
+        .content-area ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+        .content-area li {
+            margin-bottom: 0.5rem;
+        }
+        .checklist-container {
+            position: sticky;
+            top: 6rem;
+            background: var(--bg-card);
+            border: 1px solid var(--bg-card-border);
+            border-radius: 16px;
+            padding: 2rem;
+            backdrop-filter: blur(12px);
+        }
+        .progress-bar-bg {
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            height: 10px;
+            width: 100%;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+        .progress-bar-fill {
+            background: linear-gradient(95deg, var(--primary), var(--secondary));
+            height: 100%;
+            width: 0%;
+            transition: width 0.4s ease;
+        }
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            cursor: pointer;
+            user-select: none;
+        }
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+        .custom-checkbox {
+            width: 22px;
+            height: 22px;
+            border: 2px solid var(--text-secondary);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+            transition: all 0.2s ease;
+        }
+        .checklist-item.checked .custom-checkbox {
+            background: var(--success);
+            border-color: var(--success);
+        }
+        .custom-checkbox svg {
+            fill: white;
+            display: none;
+            width: 14px;
+            height: 14px;
+        }
+        .checklist-item.checked .custom-checkbox svg {
+            display: block;
+        }
+        .checklist-item.checked .item-text {
+            text-decoration: line-through;
+            color: var(--text-secondary);
+            opacity: 0.7;
+        }
+        .item-text h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 0.2rem;
+        }
+        .item-text p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                🚀 ExamPrep<span>Portal</span>
+            </div>
+            <nav aria-label="Main Navigation">
+                <ul style="display: flex; gap: 1.5rem; list-style: none;">
+                    <li><a href="../../index.html" class="nav-link" style="color: var(--text-secondary); text-decoration: none; font-weight: 500;">Home</a></li>
+                    <li><a href="../../index.html#courses" class="nav-link active" style="color: var(--primary); text-decoration: none; font-weight: 600;">Compliance</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main>
+        <!-- Breadcrumb & Intro -->
+        <div style="margin-bottom: 2rem;">
+            <span style="color: var(--primary); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">Colorado Construction Standards</span>
+            <h1 style="font-size: 2.2rem; font-weight: 800; color: white; margin-top: 0.5rem; margin-bottom: 1rem;">Douglas County CO Residential Building Checklist</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 800px;">Ensure your residential construction plans, additions, or structural modifications meet Douglas County building division compliance guidelines.</p>
+        </div>
+
+        <div class="split-layout">
+            
+            <!-- Left Side: High Authority SEO content -->
+            <section class="content-area glass-card" style="padding: 2.5rem;">
+                
+                <h2 id="step-1">1. Site Plan Specifications</h2>
+                <p>All building permit applications in Douglas County require a detailed, scaled site plan. The site plan must be prepared on a minimum sheet size of 8.5" x 11" and must explicitly showcase property dimensions, street locations, easements, setbacks, and existing structures.</p>
+                <p>If your property relies on an individual well or septic system, their exact locations must be marked on the site plan. You must also display existing and proposed topography contours, indicating slopes and drainage patterns to ensure water run-off does not affect adjacent properties.</p>
+
+                <h2 id="step-2">2. Structural Engineering Requirements</h2>
+                <p>Given Colorado's unique environmental conditions, residential structures must be designed to withstand local wind and snow loads. Douglas County requires sealed structural drawings prepared by a licensed Colorado Professional Engineer (P.E.).</p>
+                <ul>
+                    <li><strong>Design Loads:</strong> Foundations and roofs must support a minimum roof snow load (typically 30-40 psf depending on elevation) and meet local wind speed ratings (minimum 115 mph wind load design).</li>
+                    <li><strong>Soils Report:</strong> A site-specific geological soils report is required to verify the foundation design can withstand expansive swelling clay soils common in Douglas County.</li>
+                </ul>
+
+                <h2 id="step-3">3. Erosion and Sedimentation Control</h2>
+                <p>Prior to breaking ground, builders must establish erosion controls to comply with state clean water regulations. For projects disturbing any land, you must submit an **Erosion and Sediment Control Plan (CBMP)** showing how you will prevent soil runoff during construction.</p>
+                <p>This includes placement of silt fencing, stabilized construction entry/exit tracks, and stockpiling strategies. Inspections of these controls must be logged regularly.</p>
+
+                <h2 id="step-4">4. Electronic Document Review and Inspections</h2>
+                <p>Douglas County processes building permits online through the citizen portal. Plans must be uploaded as multi-page PDF documents. The plan review process takes approximately 10-15 business days for residential plans.</p>
+                <p>Once approved and construction begins, you must schedule inspections at critical phases: foundation/footings, framing, electrical rough-ins, plumbing rough-ins, insulation, and final inspection for the Certificate of Occupancy (CO).</p>
+                
+                <!-- FAQ Section for extra SEO search authority -->
+                <h2>Frequently Asked Questions</h2>
+                <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1rem;">
+                    <div>
+                        <h4 style="color: white; font-weight: 600; margin-bottom: 0.4rem;">What building codes are currently active in Douglas County?</h4>
+                        <p style="margin: 0; font-size: 0.95rem;">Douglas County enforces the 2018 International Residential Code (IRC), International Building Code (IBC), and local amendments.</p>
+                    </div>
+                    <div>
+                        <h4 style="color: white; font-weight: 600; margin-bottom: 0.4rem;">How long is a residential building permit valid?</h4>
+                        <p style="margin: 0; font-size: 0.95rem;">Permits expire if work does not commence within 180 days of issue, or if construction is suspended/abandoned for 180 days.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Side: Interactive Checklist -->
+            <aside>
+                <div class="checklist-container">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <h3 style="color: white; font-weight: 700; font-size: 1.2rem;">Interactive Checklist</h3>
+                        <span id="progress-percent" style="font-weight: 700; color: var(--accent); font-size: 1.1rem;">0% Complete</span>
+                    </div>
+                    
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" id="progress-fill"></div>
+                    </div>
+
+                    <div id="checklist-items">
+                        
+                        <div class="checklist-item" data-id="douglas-1">
+                            <div class="custom-checkbox">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            </div>
+                            <div class="item-text">
+                                <h4>Site Plan Drawings</h4>
+                                <p>Draft site maps showing boundaries, easements, and utility locations.</p>
+                            </div>
+                        </div>
+
+                        <div class="checklist-item" data-id="douglas-2">
+                            <div class="custom-checkbox">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            </div>
+                            <div class="item-text">
+                                <h4>Soils Report</h4>
+                                <p>Obtain site-specific geological foundation soil analysis.</p>
+                            </div>
+                        </div>
+
+                        <div class="checklist-item" data-id="douglas-3">
+                            <div class="custom-checkbox">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            </div>
+                            <div class="item-text">
+                                <h4>Engineered Framing Details</h4>
+                                <p>Acquire stamped structural layouts matching local snow/wind loads.</p>
+                            </div>
+                        </div>
+
+                        <div class="checklist-item" data-id="douglas-4">
+                            <div class="custom-checkbox">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            </div>
+                            <div class="item-text">
+                                <h4>Erosion Control Plan (CBMP)</h4>
+                                <p>Design silt fence mapping and stormwater run-off plans.</p>
+                            </div>
+                        </div>
+
+                        <div class="checklist-item" data-id="douglas-5">
+                            <div class="custom-checkbox">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            </div>
+                            <div class="item-text">
+                                <h4>Water &amp; Sewer Tap Fees</h4>
+                                <p>Verify local water district sewer connection capacity.</p>
+                            </div>
+                        </div>
+
+                        <div class="checklist-item" data-id="douglas-6">
+                            <div class="custom-checkbox">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            </div>
+                            <div class="item-text">
+                                <h4>Electronic Portal Submission</h4>
+                                <p>Submit blueprints in PDF to Douglas County Online Permitting.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button id="reset-btn" class="btn-primary" style="margin-top: 1.5rem; width: 100%; padding: 0.8rem; background: rgba(255,255,255,0.05); border: 1px solid var(--bg-card-border); color: white; cursor: pointer; box-shadow: none;">
+                        Reset Checklist Progress
+                    </button>
+                </div>
+            </aside>
+
+        </div>
+
+        <!-- Premium CTA Section -->
+        <section class="glass-card" style="margin-top: 4rem; padding: 3rem; text-align: center; border: 1px solid rgba(99, 102, 241, 0.3); background: radial-gradient(circle at top right, rgba(99,102,241,0.05), transparent);">
+            <span style="font-weight: 700; color: var(--accent); background: rgba(6, 182, 212, 0.1); padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.75rem; border: 1px solid rgba(6, 182, 212, 0.2);">CONTRACTOR COMPLIANCE BUNDLE</span>
+            <h3 style="font-size: 1.8rem; font-weight: 800; color: white; margin-top: 1rem; margin-bottom: 0.5rem;">Douglas County CO Residential Compliance Bundle</h3>
+            <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 2rem auto; font-size: 0.95rem;">Download editable site plan CAD layouts, sample soils report parameters, sediment barrier detailing drawings, and standard builder permit response letter templates.</p>
+            
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                <a href="#" class="btn-primary" style="padding: 1rem 2.5rem; text-decoration: none; font-size: 1.05rem; display: inline-flex; align-items: center; gap: 0.5rem;">
+                    Download Contractor Bundle - $29.99
+                </a>
+                <span style="color: var(--text-secondary); font-size: 0.8rem;">Includes CAD &amp; PDF templates • Instantly download after purchase</span>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content" style="max-width: 1200px; margin: 0 auto; padding: 2rem; display: flex; justify-content: space-between; align-items: center; color: var(--text-secondary); border-top: 1px solid var(--bg-card-border);">
+            <div>© 2026 Exam Prep Portal.</div>
+            <div>
+                <a href="../../sitemap.xml" style="color: var(--text-secondary); text-decoration: none; margin-right: 1rem;">Sitemap</a>
+                <a href="../../robots.txt" style="color: var(--text-secondary); text-decoration: none;">Robots.txt</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JS Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const items = document.querySelectorAll('.checklist-item');
+            const progressFill = document.getElementById('progress-fill');
+            const progressPercent = document.getElementById('progress-percent');
+            const resetBtn = document.getElementById('reset-btn');
+
+            // Load saved state
+            items.forEach(item => {
+                const id = item.getAttribute('data-id');
+                if (localStorage.getItem(id) === 'checked') {
+                    item.classList.add('checked');
+                }
+                
+                item.addEventListener('click', () => {
+                    item.classList.toggle('checked');
+                    if (item.classList.contains('checked')) {
+                        localStorage.setItem(id, 'checked');
+                    } else {
+                        localStorage.removeItem(id);
+                    }
+                    updateProgress();
+                });
+            });
+
+            // Update progress calculation
+            function updateProgress() {
+                const total = items.length;
+                const checked = document.querySelectorAll('.checklist-item.checked').length;
+                const percentage = Math.round((checked / total) * 100);
+                progressFill.style.width = `${percentage}%`;
+                progressPercent.innerText = `${percentage}% Complete`;
+            }
+
+            // Reset logic
+            resetBtn.addEventListener('click', () => {
+                items.forEach(item => {
+                    const id = item.getAttribute('data-id');
+                    item.classList.remove('checked');
+                    localStorage.removeItem(id);
+                });
+                updateProgress();
+            });
+
+            // Initial progress calculation
+            updateProgress();
+        });
+    </script>
+</body>
+</html>
